@@ -1,9 +1,10 @@
-# Python
+# Python-specific ignores
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+env/
 build/
 develop-eggs/
 dist/
@@ -15,42 +16,24 @@ lib64/
 parts/
 sdist/
 var/
-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 
 # Virtual environments
 venv/
-env/
 ENV/
-
-# Environment variables
 .env
-.env.local
 
-# IDE
-.vscode/
+# IDE specific files
 .idea/
+.vscode/
 *.swp
 *.swo
 
-# OS
-.DS_Store
-Thumbs.db
-
 # Logs
-*.log
 logs/
+*.log
 
-# Test coverage
-.coverage
-htmlcov/
-.pytest_cache/
-
-# Azure
-.azure/
-
-# Temporary files
-tmp/
-temp/
+# Local configuration
+config.local.json

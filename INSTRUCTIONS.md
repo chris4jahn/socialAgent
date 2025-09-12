@@ -3,13 +3,29 @@
 ## Installation
 
 1. Make sure you have Python 3.8 or newer installed.
-2. Install the required packages:
+
+2. Create and activate a virtual environment:
 
    ```bash
-   pip install semantic-kernel openai
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use: venv\Scripts\activate
    ```
 
-3. Copy the .env.template file to .env and add your OpenAI API key:
+3. Install the required packages:
+
+   Option A: Using requirements.txt
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   Option B: Install individual packages
+
+   ```bash
+   pip install semantic-kernel openai python-dotenv
+   ```
+
+4. Copy the .env.template file to .env and add your OpenAI API key:
 
    ```bash
    cp .env.template .env

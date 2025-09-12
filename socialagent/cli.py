@@ -157,6 +157,10 @@ async def main(args: Optional[List[str]] = None) -> None:
     parser.add_argument("--openai-api-key", help="OpenAI API Key (or set OPENAI_API_KEY environment variable)")
     parser.add_argument("--openai-model", default="gpt-4", help="OpenAI model to use (default: gpt-4)")
     
+    # Personal style configuration
+    parser.add_argument("--personal-style", help="Your personal writing style preferences (or set PERSONAL_STYLE environment variable)")
+    parser.add_argument("--style-file", help="Path to a file containing your personal writing style guidelines")
+    
     subparsers = parser.add_subparsers(dest="action", help="Action to perform")
     
     # Parser for generating a single post
@@ -216,6 +220,17 @@ async def main(args: Optional[List[str]] = None) -> None:
             print("Error: OpenAI API key is required. Provide it with --openai-api-key or set the OPENAI_API_KEY environment variable.")
             sys.exit(1)
     
+    # Get personal style configuration
+    personal_style = parsed_args.personal_style or os.environ.get("PERSONAL_STYLE")
+    
+    # If a style file is provided, read the style from the file
+    if parsed_args.style_file and os.path.exists(parsed_args.style_file):
+        try:
+            with open(parsed_args.style_file, 'r') as f:
+                personal_style = f.read().strip()
+        except Exception as e:
+            print(f"Warning: Could not read style file: {e}")
+    
     # Initialize the agent
     try:
         if use_azure:
@@ -224,13 +239,15 @@ async def main(args: Optional[List[str]] = None) -> None:
                 model_id=model_id, 
                 use_azure=True,
                 azure_endpoint=azure_endpoint,
-                azure_deployment=azure_deployment
+                azure_deployment=azure_deployment,
+                personal_style=personal_style
             )
         else:
             agent = LinkedInContentAgent(
                 api_key=api_key, 
                 model_id=model_id, 
-                use_azure=False
+                use_azure=False,
+                personal_style=personal_style
             )
     except ValueError as e:
         print(f"Error initializing agent: {e}")

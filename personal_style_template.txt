@@ -1,0 +1,22 @@
+# Personal Writing Style Guidelines
+# Edit this file to customize the writing style of your LinkedIn content
+
+- Write in a concise, clear, and direct style
+- Use a conversational and approachable tone that still maintains professionalism
+- Include occasional personal anecdotes or experiences when relevant
+- Ask thoughtful questions to engage the audience
+- Use bullet points for clarity when listing information
+- Add a touch of humor when appropriate
+- Balance technical expertise with accessibility
+- Avoid jargon unless necessary for the target audience
+- Use a mix of short and medium-length sentences for rhythm
+- End with a clear call to action or thought-provoking question
+
+# Additional Personal Style Preferences
+# Add your own style preferences below:
+
+- Use technical analogies to explain complex concepts
+- Include one relevant statistic or data point for credibility
+- Maintain a confident but humble tone
+- Prefer active voice over passive voice
+- Keep paragraphs short (2-3 sentences maximum)
